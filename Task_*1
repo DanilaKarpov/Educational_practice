@@ -1,0 +1,38 @@
+library("lmtest")
+library("GGally")
+library("car")
+
+data = swiss
+help(swiss)
+
+data
+summary(data)
+ggpairs(data)
+
+data$Examination
+mean(data$Examination)
+var(data$Examination)
+plot(data$Examination)
+sd(data$Examination)
+
+data$Education
+mean(data$Education)
+var(data$Education)
+plot(data$Education)
+sd(data$Education)
+
+data$Agriculture
+mean(data$Agriculture)
+var(data$Agriculture)
+plot(data$Agriculture)
+sd(data$Agriculture)
+
+modele1 = lm(Examination~Education, data)
+modele1
+summary(modele1)
+plot(data$Examination,data$Education) + abline()
+
+modele2 = lm(Examination~Education, data)
+modele2
+summary(modele2)
+plot(data$Examination,data$Education) + abline()
